@@ -103,11 +103,11 @@
         <div class="btn-group">
             <button class="button" type="button"><span>O nas</span></button>
             <button class="button" type="button"><span>Części</span></button>
-            <button onclick="location.href='Register.aspx'" class="button" type="button"><span>Rejestracja</span></button>
-            <button class="button" type="button"><span>Kontakt</span></button>
+            <button onclick="location.href='Register.aspx'" class="button" type="button"><span>Lorem ipsum</span></button>
+            <button class="button" type="button"><span>Lorem ipsum</span></button>
         </div>
         <br />
-        <nav style="clear: both">
+        <nav id="Log_bar" runat="server" style="clear: both">
             <h4 style="vertical-align: bottom; text-align: center">Witamy na stronie</h4>
             <asp:Label ID="Label1" runat="server" Text="Nazwa"></asp:Label>
             <asp:TextBox class="text1" ID="TextBox1" runat="server" ></asp:TextBox>

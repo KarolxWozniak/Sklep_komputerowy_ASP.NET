@@ -61,6 +61,8 @@
                 </td>
                 <td style="text-align: left">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="E-mail jest wymagany" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="Niepoprawna forma adresu e-mail" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -75,10 +77,12 @@
             <tr>
                 <td class="auto-style7" style="text-align: right">Potwierdź hasło:</td>
                 <td class="auto-style8">
-                    <asp:TextBox ID="TextBox4" runat="server" Width="200px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox4" runat="server" Width="200px" TextMode="Password"></asp:TextBox>
                 </td>
                 <td class="auto-style9" style="text-align: left">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox4" ErrorMessage="Hasło nie jest identyczne" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox4" ErrorMessage="Potwierdzenie hasła jest wymagane" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox3" ControlToValidate="TextBox4" ErrorMessage="Oba hasła muszą być identyczne" ForeColor="Red"></asp:CompareValidator>
                 </td>
             </tr>
             <tr>
@@ -94,7 +98,7 @@
                     </asp:DropDownList>
                 </td>
                 <td style="text-align: left">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList1" ErrorMessage="Wybierz kraj" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList1" ErrorMessage="Wybierz kraj" ForeColor="Red" InitialValue="Wybierz kraj"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -104,8 +108,12 @@
             </tr>
             <tr>
                 <td class="auto-style4">&nbsp;</td>
-                <td class="auto-style6">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style6" style="text-align: center">
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Zatwierdź" />
+                </td>
+                <td>
+                    <asp:Button ID="Button2" runat="server" Text="Powrót" OnClick="Button2_Click" CausesValidation="false"/>
+                </td>
             </tr>
         </table>
     
